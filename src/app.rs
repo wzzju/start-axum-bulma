@@ -38,6 +38,7 @@ pub fn App() -> impl IntoView {
             <Layout>
                 <Routes>
                     <Route path="/" view=HomePage/>
+                    <Route path="/form" view=FormPage/>
                 </Routes>
             </Layout>
         </Router>
