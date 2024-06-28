@@ -66,7 +66,7 @@ pub fn Layout(children: Children) -> impl IntoView {
                         </figure>
                     </div>
                     <div class="media-content">
-                        <div class="title is-5">"Leptos Bulma"</div>
+                        <div class="title is-5">"{{project-name}}"</div>
                     </div>
                 </BNavbarItem>
 
