@@ -4,6 +4,7 @@ use leptos_router::*;
 
 use crate::layout::Layout;
 use crate::pages::*;
+use leptos_toaster::Toaster;
 use leptos_use::{use_color_mode_with_options, UseColorModeOptions, UseColorModeReturn};
 
 pub fn use_app_color_mode() -> UseColorModeReturn {
@@ -36,10 +37,12 @@ pub fn App() -> impl IntoView {
             fallback=|| { view! { <NotFoundPage/> }.into_view() }
         >
             <Layout>
-                <Routes>
-                    <Route path="/" view=HomePage/>
-                    <Route path="/form" view=FormPage/>
-                </Routes>
+                <Toaster>
+                    <Routes>
+                        <Route path="/" view=HomePage/>
+                        <Route path="/form" view=FormPage/>
+                    </Routes>
+                </Toaster>
             </Layout>
         </Router>
     }

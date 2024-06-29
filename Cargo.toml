@@ -7,15 +7,17 @@ edition = "2021"
 crate-type = ["cdylib", "rlib"]
 
 [build-dependencies]
-leptos-bulma = { version = "0.4.0", default-features = false, features = ["build-script"] }
+leptos-bulma = { version = "0.4.0", default-features = false, features = [
+    "build-script",
+] }
 
 [dependencies]
 axum = { version = "0.7", optional = true }
 console_error_panic_hook = "0.1"
-leptos = { version = "0.6" }
+leptos = "0.6"
 leptos_axum = { version = "0.6", optional = true }
-leptos_meta = { version = "0.6" }
-leptos_router = { version = "0.6" }
+leptos_meta = "0.6"
+leptos_router = "0.6"
 leptos-use = "0.10.10"
 slug = "0.1.5"
 tokio = { version = "1", features = ["rt-multi-thread"], optional = true }
@@ -45,10 +47,16 @@ leptos-bulma = { version = "0.4.0", features = [
     "icondata-vs",
     "icondata-wi",
 ] }
-icondata_core = { version = "0.1" }
+icondata_core = "0.1"
+leptos_toaster = { version = "0.1.7", features = ["builtin_toast"] }
 
 [features]
-hydrate = ["leptos/hydrate", "leptos_meta/hydrate", "leptos_router/hydrate"]
+hydrate = [
+    "leptos/hydrate",
+    "leptos_meta/hydrate",
+    "leptos_router/hydrate",
+    "leptos_toaster/hydrate",
+]
 ssr = [
     "dep:axum",
     "dep:tokio",
@@ -61,6 +69,7 @@ ssr = [
     "leptos-bulma/ssr",
     "leptos-use/ssr",
     "leptos-use/axum",
+    "leptos_toaster/ssr",
     "dep:tracing",
 ]
 
